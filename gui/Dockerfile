@@ -8,6 +8,7 @@ WORKDIR /home/user
 RUN git clone https://github.com/username29800/ub24-server-remote-ready-ct nedcat
 WORKDIR nedcat/segments
 RUN sh onestop-apps.sh
+RUN sh env/font-extras.sh
 RUN chown -R user ..
 USER user
 WORKDIR /home/user/nedcat/segments
@@ -31,11 +32,11 @@ RUN sed -i '$s,^,#,' .config/tigervnc/xstartup
 RUN sed -i '$aibus-daemon -rxd' .config/tigervnc/xstartup
 RUN sed -i '$axfce4-session' .config/tigervnc/xstartup
 RUN git clone https://github.com/syl20bnr/spacemacs .emacs.d
-RUN git clone https://github.com/naver/d2codingfont
-WORKDIR /home/user/d2codingfont
-RUN unzip D2Coding-Ver1.3.2*.zip
-RUN mkdir -p /home/user/.fonts
-RUN cp -a D2CodingAll/*.ttc ~/.fonts
-RUN fc-cache
+#RUN git clone https://github.com/naver/d2codingfont
+#WORKDIR /home/user/d2codingfont
+#RUN unzip D2Coding-Ver1.3.2*.zip
+#RUN mkdir -p /home/user/.fonts
+#RUN cp -a D2CodingAll/*.ttc ~/.fonts
+#RUN fc-cache
 USER root
 CMD ["/usr/sbin/sshd", "-D"]
