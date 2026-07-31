@@ -4,7 +4,7 @@ apt install -y fonts-noto-cjk-extra fonts-nanum fontconfig
 cd /
 #git clone https://github.com/naver/d2codingfont
 git clone https://github.com/naver/d2-coding-font
-cd d2codingfont
+cd d2-coding-font
 
 # >>> These two lines are deprecated due to recent updates on D2Coding.
 #unzip D2Coding-Ver1.3.2-*.zip
