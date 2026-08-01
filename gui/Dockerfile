@@ -5,7 +5,7 @@ RUN apt upgrade -y
 #RUN apt install -y xfe caja pluma ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal tigervnc-standalone-server tigervnc-viewer rofi openbox firefox-esr emacs gnome-builder vim-gtk3 plank xcompmgr fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-nanum
 RUN apt install -y ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal tigervnc-standalone-server tigervnc-viewer fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-nanum
 WORKDIR /home/user
-RUN git clone https://github.com/username29800/ub24-server-remote-ready-ct nedcat
+RUN git clone https://github.com/username29800/lc-setup-segments nedcat
 WORKDIR nedcat/segments
 RUN sh onestop-apps.sh
 RUN sh env/font-extras.sh
