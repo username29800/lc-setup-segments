@@ -1,6 +1,8 @@
 FROM docker.io/library/rockylinux:8
 USER root
 
+# pseudo-segment: prerequisites
+
 RUN dnf update -y
 RUN dnf install -y git
 
@@ -8,21 +10,35 @@ WORKDIR /root
 RUN git clone https://github.com/username29800/lc-setup-segments redcat
 
 WORKDIR /root/redcat/redcat
+
+# segment: base
 RUN sh base/required.sh
 RUN sh base/required-setup.sh
 RUN sh base/advanced.sh
 RUN sh base/advanced-setup-u.sh
+
+# segment: env-buildtools
 RUN sh env/build-base.sh
 RUN sh env/build-c.sh
 RUN sh env/build-sh.sh
+
+# segment: env-base
 RUN sh env/testing.sh
 RUN sh env/remote.sh
 RUN sh env/font-extras.sh
+
+# segment: server
 RUN sh server/default.sh
 RUN sh server/default-setup.sh
 RUN sh server/sysadmin.sh
 
+# pseudo-segment: user
+RUN cp -a /root/redcat /home/user/redcat
+RUN chown -R user /home/user/redcat
+
 USER user
 WORKDIR /home/user
 
-RUN sh /root/redcat/redcat/base/advanced-setup-u.sh
+RUN sh redcat/redcat/base/advanced-setup-u.sh
+
+CMD ['/usr/sbin/sshd', '-D']
