@@ -44,4 +44,4 @@ RUN sh redcat/redcat/base/advanced-setup-u.sh
 
 USER root
 WORKDIR /root/dnt2srv
-CMD ['sh', 'lib/dntsrv_f', '.', 'd2sv-default']
+CMD ["sh", "lib/dntsrv_f", ".", "d2sv-default"]
