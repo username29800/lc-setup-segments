@@ -1,8 +1,6 @@
 #!/bin/sh
 # run as root
 
-set -e
-
 # 1. install dnt2aw for root
 homepath="`su -c 'echo $HOME' root`"
 port="`echo "$1" | sed 's,^$,22,'`"
@@ -15,3 +13,4 @@ sh cfgenv.sh "$homepath"
 sh lib/newserver . d2sv-default "$port" d2sv-data > d2sv-default
 sh lib/dntenv_f . d2sv-default
 sh lib/dntkey_f . d2sv-default
+sed -i 's,'\''-o '\'\\\\\'\''AuthorizedKeysFile *,& /home/user/.ssh/authorized_keys,' d2sv-default

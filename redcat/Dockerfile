@@ -31,6 +31,7 @@ RUN sh env/font-extras.sh
 RUN sh server/default.sh
 RUN sh server/default-setup.sh
 RUN sh server/sysadmin.sh
+RUN sh server/sysadmin-setup.sh
 
 # pseudo-segment: user
 RUN cp -a /root/redcat /home/user/redcat
@@ -41,4 +42,6 @@ WORKDIR /home/user
 
 RUN sh redcat/redcat/base/advanced-setup-u.sh
 
-CMD ['/usr/sbin/sshd', '-D']
+USER root
+WORKDIR /root/dnt2srv
+CMD ['sh', 'lib/dntsrv_f', '.', 'd2sv-default']
