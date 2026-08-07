@@ -42,7 +42,11 @@ WORKDIR /home/user
 
 RUN sh redcat/redcat/base/advanced-setup-u.sh
 
+# pseudo-segment: graphical environment
 USER root
+RUN dnt groupinstall -y xfce
+
+# pseudo-segment: launcher
 WORKDIR /root/dnt2srv
 RUN rm -f /run/nologin
 CMD ["sh", "lib/u_dntpst_f", ".", "d2sv-default"]
