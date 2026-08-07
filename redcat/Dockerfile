@@ -1,4 +1,4 @@
-FROM docker.io/library/rockylinux:8
+FROM docker.io/library/rockylinux:9
 USER root
 
 # pseudo-segment: prerequisites
