@@ -1,4 +1,4 @@
-FROM docker.io/library/rockylinux:9
+FROM docker.io/library/fedora:latest
 USER root
 
 # pseudo-segment: prerequisites
@@ -43,8 +43,11 @@ WORKDIR /home/user
 RUN sh redcat/redcat/base/advanced-setup-u.sh
 
 # pseudo-segment: graphical environment
+# NOTE: Among these two commented lines below,
+#       pick the one that fits the package manager.
 USER root
-RUN dnf groupinstall -y xfce
+#RUN dnf groupinstall -y xfce
+#RUN dnf group install -y xfce*
 
 # pseudo-segment: launcher
 WORKDIR /root/dnt2srv
