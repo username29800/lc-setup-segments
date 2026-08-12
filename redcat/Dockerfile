@@ -1,7 +1,7 @@
 #FROM docker.io/library/rockylinux:8
-#FROM docker.io/library/rockylinux:9
+FROM docker.io/library/rockylinux:9
 #FROM docker.io/library/rockylinux:10
-FROM docker.io/library/fedora:latest
+#FROM docker.io/library/fedora:latest
 USER root
 
 # pseudo-segment: prerequisites
@@ -30,8 +30,8 @@ RUN sh env/remote.sh
 RUN sh env/font-extras.sh
 # NOTE: switch to 'testing.sh' for Rocky Linux 8 and 9
 #       switch to 'testing_modern.sh' for Rocky Linux 10 and fedora.
-#RUN sh env/testing.sh
-RUN sh env/testing_modern.sh
+RUN sh env/testing.sh
+#RUN sh env/testing_modern.sh
 
 # segment: server
 RUN sh server/default.sh
@@ -52,8 +52,8 @@ RUN sh redcat/redcat/base/advanced-setup-u.sh
 # NOTE: Among these two installer lines below,
 #       pick the one that fits the package manager.
 USER root
-#RUN dnf groupinstall -y xfce
-RUN dnf group install -y xfce*
+RUN dnf groupinstall -y xfce
+#RUN dnf group install -y xfce*
 
 # pseudo-segment: launcher
 WORKDIR /root/dnt2srv
