@@ -42,10 +42,11 @@ USER user
 WORKDIR /home/user
 
 RUN sh nedcat/nedcat/base/advanced-setup-u.sh
+RUN sed -i '$cxfce4-session' .config/tigervnc/xstartup
 
 # pseudo-segment: graphical environment
 USER root
-RUN apt install -y xfce4
+RUN apt install -y xfce4 dbus-x11
 
 # pseudo-segment: launcher
 WORKDIR /root/dnt2srv
