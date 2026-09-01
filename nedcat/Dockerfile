@@ -4,8 +4,8 @@ USER root
 
 # pseudo-segment: prerequisites
 
-RUN dnf update -y
-RUN dnf install -y git
+RUN apt update -y
+RUN apt install -y git
 
 WORKDIR /root
 RUN git clone https://github.com/username29800/lc-setup-segments nedcat
