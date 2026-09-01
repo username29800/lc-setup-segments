@@ -1,5 +1,5 @@
-#FROM docker.io/library/ubuntu:latest
-FROM docker.io/library/debian:latest
+FROM docker.io/library/ubuntu:latest
+#FROM docker.io/library/debian:latest
 USER root
 
 # pseudo-segment: prerequisites
