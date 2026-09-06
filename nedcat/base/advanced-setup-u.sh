@@ -13,3 +13,4 @@ bash tools/install.sh
 # 3. install 90-l'days (dnt2aw's user-level setup)
 cd $HOME/dnt2setup
 sh cfgenv.sh "$HOME"
+sh v90.sh "$HOME"
