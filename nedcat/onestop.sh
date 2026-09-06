@@ -35,7 +35,7 @@ apt install -y xfce4 dbus-x11
 # pseudo-segment: user
 cp -a . "$2/scripts_setup"
 chown -R "$1" "$2/scripts_setup"
-sudo -u "$1" sh -c "$2/scripts_setup/nedcat \
+sudo -u "$1" sh -c "$2/scripts_setup/ \
 && sh base/advanced-setup-u.sh  \
 && sh apps/platform-user.sh \
 && sh apps/internet-setup.sh $2"
