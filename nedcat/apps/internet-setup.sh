@@ -7,7 +7,7 @@
 arc_firefox='https://download-installer.cdn.mozilla.net/pub/firefox/releases/153.0/linux-x86_64/en-US/firefox-153.0.tar.xz'
 arc_thunder='https://download-installer.cdn.mozilla.net/pub/thunderbird/releases/153.0/linux-x86_64/en-US/thunderbird-153.0.tar.xz'
 arc_discord='https://stable.dl2.discordapp.net/apps/linux/1.0.150/discord-1.0.150.tar.gz'
-arc_seamon='https://archive.seamonkey-project.org/releases/2.53.23/linux-x86_64/en-US/seamonkey-2.53.23.en-US.linux-x86_64.tar.bz2'
+#arc_seamon='https://archive.seamonkey-project.org/releases/2.53.23/linux-x86_64/en-US/seamonkey-2.53.23.en-US.linux-x86_64.tar.bz2'
 
 # common configurations
 cpath="`cd "$1" && pwd`"
@@ -36,7 +36,7 @@ chmod 0755 data/Discord/*/discord
 ln -sf "$dpath"/Discord/*/discord menu/Discord
 
 # nedcat Application segment - SeaMonkey installer
-curl -o archives/Seamonkey.tar.bz2 "$arc_seamon"
-tar --overwrite -C data/Seamonkey -xf archives/Seamonkey.tar.bz2
-chmod 0755 data/Seamonkey/*/seamonkey
-ln -sf "$dpath"/Seamonkey/*/seamonkey menu/Seamonkey
+#curl -o archives/Seamonkey.tar.bz2 "$arc_seamon"
+#tar --overwrite -C data/Seamonkey -xf archives/Seamonkey.tar.bz2
+#chmod 0755 data/Seamonkey/*/seamonkey
+#ln -sf "$dpath"/Seamonkey/*/seamonkey menu/Seamonkey
