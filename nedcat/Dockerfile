@@ -17,8 +17,12 @@ RUN sh base/required-setup.sh
 
 RUN sh onestop.sh user /home/user
 
+USER user
+WORKDIR /home/user
+
 RUN sed -i '$cxfce4-session' .config/tigervnc/xstartup
 
 # pseudo-segment: launcher
+USER root
 WORKDIR /root/dnt2srv
 CMD ["sh", "lib/u_dntpst_f", ".", "d2sv-default"]
