@@ -12,7 +12,7 @@ RUN git clone https://github.com/username29800/lc-setup-segments nedcat
 
 WORKDIR /root/nedcat/nedcat
 
-RUN sh onestop.sh
+RUN sh onestop.sh user /home/user
 
 RUN sed -i '$cxfce4-session' .config/tigervnc/xstartup
 
