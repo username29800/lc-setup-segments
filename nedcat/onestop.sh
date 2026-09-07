@@ -27,7 +27,7 @@ sh server/sysadmin.sh
 sh server/sysadmin-setup.sh
 
 # segment: app platform
-sh apps/platform.sh
+sh apps/platform.sh root
 
 # pseudo-segment: graphical environment
 apt install -y xfce4 dbus-x11
