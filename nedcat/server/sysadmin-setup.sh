@@ -10,6 +10,7 @@ mv dnt2srv dnt2srv-backup
 git clone https://gitlab.com/username29800/dnt2aw dnt2srv
 cd dnt2srv
 sh cfgenv.sh "$homepath"
+sh v90.sh "$homepath"
 sh lib/newserver . d2sv-default "$port" d2sv-data > d2sv-default
 sh lib/dntenv_f . d2sv-default
 sh lib/dntkey_f . d2sv-default
