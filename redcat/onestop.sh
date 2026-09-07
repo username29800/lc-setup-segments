@@ -1,7 +1,7 @@
 # run as root
 # usage: sh ./onestop.sh [user] [home dir]
 
-dnf update && dnf upgrade -y
+dnf update -y
 dnf install -y git
 
 # segment: base
@@ -30,7 +30,10 @@ sh server/sysadmin-setup.sh
 #sh apps/platform.sh
 
 # pseudo-segment: graphical environment
-dnf install -y xfce4 dbus-x11
+# NOTE: Among these two installer lines below,
+#       pick the one that fits the package manager.
+dnf groupinstall -y xfce
+#dnf group install -y xfce*
 
 # pseudo-segment: user
 cp -a . "$2/scripts_setup"
